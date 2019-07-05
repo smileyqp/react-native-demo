@@ -1,13 +1,27 @@
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View,Button} from 'react-native';
 
 
 export default class TaskPage extends Component{
   render() {
+    const {navigation} = this.props;
     return (
         <View style={styles.container}>
           <Text style={styles.welcome}>Task Page! </Text>
+          <Button title="change color to red" onPress = { () => {
+            console.log('7878');
+            console.log(this.props.navigation.state);
+            navigation.setParams({
+              theme:{
+                tintColor:'red',
+                updateTime:new Date().getTime()}
+            })
+            console.log(this.props.navigation.state)
+          }
+
+          }
+          />
         </View>
     );
   }

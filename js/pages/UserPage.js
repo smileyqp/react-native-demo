@@ -11,12 +11,12 @@ export default class UserPage extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>User Page! </Text>
-        <Button title="change color" onPress = { () => {
+        <Button title="change color to green" onPress = { () => {
           console.log('7878');
           console.log(this.props.navigation.state);
           navigation.setParams({
             theme:{
-              tintColor:'red',
+              tintColor:'green',
               updateTime:new Date().getTime()}
           })
           console.log(this.props.navigation.state)

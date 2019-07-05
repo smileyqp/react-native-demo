@@ -2,7 +2,9 @@
 
 - WelcomePage
 - Dynamic Bottom Navigation
-- Top Navigation
+- Dynamic Top Navigation
+— Automatically change button tab color
+- Pass params from top tab to its page
 - DetailsPage
 - Redux with store、reducer work normally(saga part will added in in the future version)
 
