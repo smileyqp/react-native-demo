@@ -10,4 +10,4 @@
 
 #### You can fork it,and use this frame as basic part to build your own project.
 ![Image text](https://github.com/smileyqp/react-native-frame/blob/master/react-native-frame.gif)
-![Image text](https://github.com/smileyqp/react-native-frame/blob/master/dynamic_navigator.gif)
+![Image text](https://github.com/smileyqp/react-native-demo/blob/master/dynamic_navigator.gif)
