@@ -89,10 +89,14 @@ class DynamicTabNavigator extends Component {
         console.disableYellowBox = true;
     }
     _tabNavigator (){
+        //防止Tab重新创建
+        if(this.Tabs){
+            return this.Tabs;
+        }
         const {AreaPage,CarPage,OverviewPage,TaskPage,UserPage} = TABS;
         const tabs = {AreaPage,CarPage,OverviewPage,TaskPage,UserPage};
         //AreaPage.navigationOptions.tabBarLabel= '园区';//动态配置tab属性
-        return createAppContainer(createBottomTabNavigator(tabs,{
+        return this.Tabs = createAppContainer(createBottomTabNavigator(tabs,{
             tabBarComponent:(props) => {return <TabBarComponent {...props} theme = {this.props.theme}/>},
             lazy:true,
             animationEnabled:false,
@@ -129,16 +133,17 @@ class TabBarComponent extends React.Component {
     }
 
     render() {
-        const {routes,index} = this.props.navigation.state;
-        if(routes[index].params){
-            const {theme} = routes[index].params;
-            if(theme && theme.updateTime > this.theme.updateTime){
-                this.theme =theme;
-            }
-        }
+        // const {routes,index} = this.props.navigation.state;
+        // if(routes[index].params){
+        //     const {theme} = routes[index].params;
+        //     if(theme && theme.updateTime > this.theme.updateTime){
+        //         this.theme =theme;
+        //     }
+        // }
+
         return <BottomTabBar
         {...this.props}
-        activeTintColor={this.theme.tintColor||this.props.activeTintColor}
+        activeTintColor={this.props.theme}
         />
     }
 }
