@@ -1,23 +1,17 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Button} from 'react-native';
+import {connect} from 'react-redux';
+import actions from '../action/index'
 
-
-export default class TaskPage extends Component{
+class TaskPage extends Component{
   render() {
     const {navigation} = this.props;
     return (
         <View style={styles.container}>
           <Text style={styles.welcome}>Task Page! </Text>
           <Button title="change color to red" onPress = { () => {
-            console.log('7878');
-            console.log(this.props.navigation.state);
-            navigation.setParams({
-              theme:{
-                tintColor:'red',
-                updateTime:new Date().getTime()}
-            })
-            console.log(this.props.navigation.state)
+              this.props.onThemeChange('red');
           }
 
           }
@@ -40,3 +34,28 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+
+
+
+
+
+const mapStateToProps = state => ({
+
+});
+
+const mapDispatchToProps = dispatch => ({
+    onThemeChange:theme => dispatch(actions.onThemeChange(theme))
+});
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(TaskPage);
+
+
+
+
+
+
+
+
+
