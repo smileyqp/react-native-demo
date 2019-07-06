@@ -6,6 +6,10 @@ import LinearGradient from "react-native-linear-gradient";
 
 
 export default class Welcome extends Component {
+  constructor(props) {
+    super(props);
+    console.disableYellowBox = true;
+  }
   componentDidMount() {
     this.timer = setTimeout(()=> {
       NavigationUtil.resetToHomePage({
