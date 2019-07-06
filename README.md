@@ -18,7 +18,7 @@
 
 
 ![Image text](https://github.com/smileyqp/react-native-demo/blob/master/FetchData.gif)
-![Image text](https://github.com/smileyqp/react-native-frame/blob/master/FetchDataErrorDeal.gif)
+![Image text](https://github.com/smileyqp/react-native-demo/blob/master/FetchDataErrorDeal.gif)
 
 
 ![Image text](https://github.com/smileyqp/react-native-demo/blob/master/AsyncStorageDemoPage.gif)
