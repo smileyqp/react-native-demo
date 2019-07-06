@@ -70,6 +70,14 @@ class TopTab extends Component {
                 navigation:this.props.navigation
             },"FetchDemoPage")}}
           />
+          <Button
+              title = {'跳转AsyncStorageDemoPage'}
+              onPress = { () => {
+                NavigationUtil.goPage({
+                  navigation:this.props.navigation
+                },"AsyncStorageDemoPage")}}
+          />
+
         </View>
     );
   }
