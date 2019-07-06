@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import {createBottomTabNavigator,
     createAppContainer} from 'react-navigation';
+import {connect} from 'react-redux';
 import AreaPage from '../pages/AreaPage';
 import CarPage from '../pages/CarPage';
 import OverviewPage from '../pages/OverviewPage';
@@ -82,7 +83,7 @@ const TABS = {
     }
 
 
-export default class DynamicTabNavigator extends Component {
+class DynamicTabNavigator extends Component {
     constructor(props) {
         super(props);
         console.disableYellowBox = true;
@@ -92,7 +93,7 @@ export default class DynamicTabNavigator extends Component {
         const tabs = {AreaPage,CarPage,OverviewPage,TaskPage,UserPage};
         //AreaPage.navigationOptions.tabBarLabel= '园区';//动态配置tab属性
         return createAppContainer(createBottomTabNavigator(tabs,{
-            tabBarComponent:TabBarComponent,
+            tabBarComponent:(props) => {return <TabBarComponent {...props} theme = {this.props.theme}/>},
             lazy:true,
             animationEnabled:false,
             initialRouteName:'OverviewPage',
@@ -141,3 +142,21 @@ class TabBarComponent extends React.Component {
         />
     }
 }
+
+
+const mapStateToProps = state => ({
+    theme:state.theme.theme
+});
+
+
+export default connect(mapStateToProps)(DynamicTabNavigator);
+
+
+
+
+
+
+
+
+
+

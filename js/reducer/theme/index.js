@@ -9,7 +9,7 @@ export default function onAction( state = defaultState,action ){
         case Types.THEME_CHANGE:
             return {
                 ...state,
-                theme:action.thrme
+                theme:action.theme
             }
 
 

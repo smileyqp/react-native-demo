@@ -1,9 +1,11 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,Button} from 'react-native';
+import {connect} from 'react-redux';
+import actions from '../action/index'
 
 
-export default class UserPage extends Component {
+class UserPage extends Component {
 
 
   render() {
@@ -12,14 +14,7 @@ export default class UserPage extends Component {
       <View style={styles.container}>
         <Text style={styles.welcome}>User Page! </Text>
         <Button title="change color to green" onPress = { () => {
-          console.log('7878');
-          console.log(this.props.navigation.state);
-          navigation.setParams({
-            theme:{
-              tintColor:'green',
-              updateTime:new Date().getTime()}
-          })
-          console.log(this.props.navigation.state)
+          this.props.onThemeChange('#096');
         }
 
         }
@@ -42,3 +37,21 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
+
+
+
+
+
+
+const mapStateToProps = state => ({
+
+});
+
+
+const mapDispatchToProps = dispatch => ({
+  onThemeChange:theme => dispatch(actions.onThemeChange(theme))
+})
+
+export default connect(mapStateToProps,mapDispatchToProps)(UserPage);
+
+
