@@ -58,10 +58,18 @@ class TopTab extends Component {
     return (
         <View style={styles.container}>
           <Text style={styles.welcome}>{tabLabel}</Text>
-          <Text onPress = { () => {
-            NavigationUtil.goPage({
-              navigation:this.props.navigation
+          <Text
+              onPress = { () => {
+                NavigationUtil.goPage({
+                navigation:this.props.navigation
             },"DetailPage")}}>跳转到详情页</Text>
+          <Button
+              title = {'跳转fetch'}
+              onPress = { () => {
+                NavigationUtil.goPage({
+                navigation:this.props.navigation
+            },"FetchDemoPage")}}
+          />
         </View>
     );
   }
