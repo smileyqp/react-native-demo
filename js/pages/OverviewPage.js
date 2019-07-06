@@ -77,6 +77,13 @@ class TopTab extends Component {
                   navigation:this.props.navigation
                 },"AsyncStorageDemoPage")}}
           />
+            <Button
+                title = {'DataStoreDemoPage'}
+                onPress = { () => {
+                    NavigationUtil.goPage({
+                        navigation:this.props.navigation
+                    },"DataStoreDemoPage")}}
+            />
 
         </View>
     );
