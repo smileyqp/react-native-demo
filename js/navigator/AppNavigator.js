@@ -7,6 +7,7 @@ import {createStackNavigator,
 import WelcomePage from "../pages/WelcomePage";
 import HomePage from "../pages/HomePage";
 import DetailPage from "../pages/DetailPage";
+import FetchDemoPage from "../pages/FetchDemoPage";
 import {connect} from 'react-redux';
 import {createReactNavigationReduxMiddleware, reduxifyNavigator} from 'react-navigation-redux-helpers';
 
@@ -29,6 +30,12 @@ const MainNavigator = createStackNavigator({
     },
     DetailPage: {
         screen: DetailPage,
+        navigationOptions: {
+            //header: null,
+        }
+    },
+    FetchDemoPage:{
+        screen: FetchDemoPage,
         navigationOptions: {
             //header: null,
         }
